@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ORIGIN Newsletter — How to Customize</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafaf8;font-family:'Barlow',sans-serif;font-weight:300;color:#1a1a1a;line-height:1.9}
+.wrap{max-width:800px;margin:0 auto;padding:60px 40px}
+.topbar{background:#0a0a0a;padding:16px 40px;display:flex;align-items:center;gap:12px;margin:-60px -40px 60px}
+.topbar img{width:32px;height:32px;object-fit:contain}
+.topbar span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.28em;text-transform:uppercase;color:#fff}
+.topbar-sub{margin-left:auto;font-size:10px;letter-spacing:3px;color:#c9a84c;text-transform:uppercase}
+h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;text-transform:uppercase;color:#0a0a0a;line-height:0.9;margin-bottom:8px}
+.subtitle{font-size:16px;color:#555;margin-bottom:48px}
+h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:#0a0a0a;margin:48px 0 16px;padding-bottom:8px;border-bottom:2px solid #c9a84c}
+h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;color:#0a0a0a;margin:24px 0 8px}
+p{margin-bottom:14px;color:#444}
+.newsletter-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.nl-card{border:1px solid #e0ddd8;padding:20px;background:#fff}
+.nl-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:#e0ddd8;line-height:1}
+.nl-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;color:#0a0a0a;margin:4px 0}
+.nl-desc{font-size:12px;color:#888}
+.nl-best{font-size:11px;color:#c9a84c;margin-top:8px;font-weight:400}
+.step{display:flex;gap:16px;margin-bottom:24px;padding:20px;background:#f6f4f0;border-left:3px solid #c9a84c}
+.step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:#c9a84c;line-height:1;flex-shrink:0;width:32px}
+.step-content h3{margin:0 0 6px}
+.step-content p{margin:0;font-size:14px}
+code{background:#1a1a1a;color:#c9a84c;padding:2px 8px;font-size:13px;border-radius:2px;font-family:monospace}
+.code-block{background:#1a1a1a;color:#f0ebe0;padding:20px;margin:12px 0;border-radius:4px;font-family:monospace;font-size:13px;line-height:1.8;overflow-x:auto;white-space:pre}
+.tip{background:#fff8e8;border:1px solid #f0c040;padding:16px 20px;margin:16px 0}
+.tip strong{color:#8a6820}
+.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.platform{border:1px solid #e0ddd8;padding:16px;text-align:center}
+.platform-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;margin-bottom:6px}
+.platform-how{font-size:12px;color:#555;line-height:1.7}
+.platform-badge{display:inline-block;padding:3px 8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.badge-easy{background:#e8f5e9;color:#2e7d32}
+.badge-medium{background:#fff3e0;color:#e65100}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+th{background:#0a0a0a;color:#fff;padding:10px 14px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:11px}
+td{padding:10px 14px;border-bottom:1px solid #e0ddd8;color:#444;vertical-align:top}
+tr:nth-child(even) td{background:#f9f9f9}
+.footer-guide{margin-top:60px;padding-top:28px;border-top:1px solid #e0ddd8;text-align:center;font-size:12px;color:#999}
+@media(max-width:600px){.newsletter-grid,.platform-grid{grid-template-columns:1fr}.topbar{padding:14px 20px;margin:-60px -20px 40px}.wrap{padding:60px 20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="topbar">
+  <img src="https://i.imgur.com/KTsre3l.png" alt="ORIGIN">
+  <span>Origin</span>
+  <span class="topbar-sub">Newsletter Guide</span>
+</div>
+
+<h1>How to Use &amp;<br>Customize</h1>
+<p class="subtitle">A simple guide for alliance partners — choose a design, personalize it, and send.</p>
+
+<h2>The 6 Newsletter Designs</h2>
+<div class="newsletter-grid">
+  <div class="nl-card"><div class="nl-num">01</div><div class="nl-name">Dark Ceremony</div><div class="nl-desc">Gold on black, Cinzel serif, ceremonial atmosphere</div><div class="nl-best">Best for: spiritual communities, ceremony-focused orgs</div></div>
+  <div class="nl-card"><div class="nl-num">02</div><div class="nl-name">Editorial Earth</div><div class="nl-desc">Warm cream &amp; forest green, Playfair Display, magazine feel</div><div class="nl-best">Best for: environmental orgs, nature-focused groups</div></div>
+  <div class="nl-card"><div class="nl-num">03</div><div class="nl-name">Modern Minimal</div><div class="nl-desc">Clean white + gold, Cormorant serif, elegant &amp; simple</div><div class="nl-best">Best for: corporate partners, professional networks</div></div>
+  <div class="nl-card"><div class="nl-num">04</div><div class="nl-name">Bold Activist</div><div class="nl-desc">High contrast dark, Bebas Neue, full-bleed energy</div><div class="nl-best">Best for: activist groups, youth orgs, festivals</div></div>
+  <div class="nl-card"><div class="nl-num">05</div><div class="nl-name">Site Style</div><div class="nl-desc">Matches origin.earth — Barlow Condensed, white + gold</div><div class="nl-best">Best for: official ORIGIN comms, brand consistency</div></div>
+  <div class="nl-card"><div class="nl-num">06</div><div class="nl-name">Sacred Earth</div><div class="nl-desc">Terracotta + ivory, Libre Baskerville, warm &amp; grounded</div><div class="nl-best">Best for: indigenous orgs, wellness communities</div></div>
+</div>
+
+<h2>How to Send It</h2>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content"><h3>Choose your design</h3><p>Open the HTML file that matches your organization's style. Preview it by double-clicking the file — it will open in your browser.</p></div>
+</div>
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content"><h3>Customize it (optional)</h3><p>Open the file in a text editor (Notepad on Windows, TextEdit on Mac). Find the sections marked with your content and update as needed. See "How to Customize" below.</p></div>
+</div>
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content"><h3>Copy the HTML code</h3><p>Select all the text in the file (Ctrl+A or Cmd+A) and copy it (Ctrl+C or Cmd+C).</p></div>
+</div>
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content"><h3>Paste into your email platform</h3><p>In Mailchimp, Klaviyo, or similar: create a new campaign, choose "Code your own" or "Custom HTML", and paste the code. Then send!</p></div>
+</div>
+
+<h2>Platform Instructions</h2>
+<div class="platform-grid">
+  <div class="platform">
+    <span class="platform-badge badge-easy">Easy</span>
+    <div class="platform-name">Mailchimp</div>
+    <div class="platform-how">New Campaign → Email → Create Email → Code your own → paste HTML</div>
+  </div>
+  <div class="platform">
+    <span class="platform-badge badge-easy">Easy</span>
+    <div class="platform-name">Klaviyo</div>
+    <div class="platform-how">Campaigns → Create → HTML Email → paste code in editor</div>
+  </div>
+  <div class="platform">
+    <span class="platform-badge badge-medium">Medium</span>
+    <div class="platform-name">Brevo / SendGrid</div>
+    <div class="platform-how">New Campaign → HTML Editor → paste the full code</div>
+  </div>
+</div>
+
+<div class="tip"><strong>Note:</strong> Substack does not support custom HTML. Use Mailchimp or similar instead.</div>
+
+<h2>How to Customize</h2>
+<p>Open the HTML file in a text editor. Here are the most common things to change:</p>
+
+<h3>Change your organization name in the footer</h3>
+<p>Find this near the bottom of the file and replace the text:</p>
+<div class="code-block">Alliance network · &lt;a href="#"&gt;Unsubscribe&lt;/a&gt;
+
+→ Change to your org name:
+Your Organization Name · &lt;a href="YOUR_UNSUBSCRIBE_LINK"&gt;Unsubscribe&lt;/a&gt;</div>
+
+<h3>Add a personal intro paragraph</h3>
+<p>Find the "What is Origin" section and add your own intro before the existing text:</p>
+<div class="code-block">&lt;p class="body-p"&gt;Hi from [Your Org Name]! We're proud to be part of ORIGIN
+and wanted to share this with our community.&lt;/p&gt;</div>
+
+<h3>Change the CTA button link</h3>
+<p>Search for <code>href="https://origin-poster.onrender.com"</code> and replace with your own registration link if needed.</p>
+
+<h3>Change colors (Design 3 and 5 only)</h3>
+<p>At the top of the CSS, find the <code>:root</code> block and change the color values:</p>
+<div class="code-block">:root {
+  --gold: #c9a84c;    /* ← change this to your accent color */
+  --black: #0a0a0a;   /* ← change this to your brand dark color */
+}</div>
+
+<h3>Change fonts</h3>
+<p>Replace the Google Fonts link at the top and update the font-family references in the CSS. Only do this if you're comfortable with HTML.</p>
+
+<h2>Image Reference</h2>
+<p>All images are hosted on Imgur and load automatically — no file uploads needed. Here are the key images used:</p>
+<table>
+  <tr><th>Image</th><th>Used for</th><th>URL</th></tr>
+  <tr><td>Hand logo</td><td>Header, CTA, footer</td><td>i.imgur.com/KTsre3l.png</td></tr>
+  <tr><td>Eagle hunter</td><td>Hero (newsletters 3, 5)</td><td>i.imgur.com/DXbwpxw.jpg</td></tr>
+  <tr><td>Earth from space</td><td>Full-bleed section</td><td>i.imgur.com/UXPPtld.jpg</td></tr>
+  <tr><td>Dr Zach Bush</td><td>Quote section</td><td>i.imgur.com/5dKf0vA.jpg</td></tr>
+  <tr><td>Elder portraits</td><td>Elder cards</td><td>Various (see file)</td></tr>
+</table>
+
+<div class="tip"><strong>To use your own images:</strong> Upload them to <a href="https://imgur.com">imgur.com</a>, right-click the image, copy image address (ending in .jpg or .png), and replace any <code>src="https://i.imgur.com/..."</code> in the HTML.</div>
+
+<h2>Need Help?</h2>
+<p>If you get stuck, contact the ORIGIN team. For simple text changes (your org name, a paragraph), you don't need any technical skills — just find the text and replace it. For color or font changes, you may want to ask someone comfortable with HTML.</p>
+
+<div class="footer-guide">
+  ORIGIN · October 17, 2026 · Planet Earth<br>
+  Newsletter Pack — For Alliance Partners
+</div>
+</div>
+</body>
+</html>

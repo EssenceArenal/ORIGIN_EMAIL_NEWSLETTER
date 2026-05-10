@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ORIGIN — Sacred Earth</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--terra:#8B3A2A;--sand:#E8D5B0;--ivory:#FAF6EE;--charcoal:#1C1C1C;--warm:#6B4C35;--accent:#C4722A}
+body{background:var(--ivory);font-family:'Raleway',sans-serif;color:var(--charcoal)}
+.wrap{max-width:640px;margin:0 auto}
+.topbar{background:var(--terra);padding:16px 32px;display:flex;justify-content:space-between;align-items:center}
+.topbar-logo{display:flex;align-items:center;gap:12px}
+.topbar-logo img{width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1)}
+.topbar-brand{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;color:var(--sand);letter-spacing:5px}
+.topbar-date{font-size:9px;letter-spacing:3px;color:rgba(232,213,176,0.7);text-transform:uppercase}
+.hero{position:relative}
+.hero img{width:100%;height:420px;object-fit:cover;object-position:center 30%;display:block;filter:brightness(0.42)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:40px;text-align:center}
+.hero-hand img{width:200px;height:auto;object-fit:contain;margin-bottom:14px;filter:brightness(0) invert(1);display:block;margin-left:auto;margin-right:auto}
+.hero-kicker{font-size:9px;letter-spacing:6px;color:var(--sand);text-transform:uppercase;margin-bottom:12px;display:block;opacity:0.8}
+.hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(52px,10vw,80px);font-weight:700;color:#fff;letter-spacing:8px;line-height:1;margin-bottom:14px}
+.hero-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,0.8);line-height:1.8}
+.divider{display:flex;align-items:center;gap:16px;padding:24px 40px}
+.divider-line{flex:1;height:1px;background:var(--sand)}
+.divider-dot{width:6px;height:6px;background:var(--accent);border-radius:50%}
+.sec{padding:44px 40px;border-bottom:1px solid var(--sand)}
+.terra-sec{background:var(--terra);padding:44px 40px}
+.eyebrow{display:block;font-size:9px;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+.h-xl{font-family:'Libre Baskerville',serif;font-size:clamp(36px,7vw,52px);color:var(--charcoal);margin-bottom:18px;line-height:1.15}
+.h-lg{font-family:'Libre Baskerville',serif;font-size:28px;color:var(--charcoal);margin-bottom:14px;line-height:1.2}
+.h-white{font-family:'Libre Baskerville',serif;font-size:28px;color:#fff;margin-bottom:14px}
+.body-p{font-size:14px;font-weight:300;line-height:2.1;color:var(--warm);margin-bottom:14px}
+.body-white{font-size:14px;font-weight:300;line-height:2.1;color:rgba(255,255,255,0.75);margin-bottom:14px}
+.hand-center{text-align:center;padding:8px 0 20px}
+.hand-center img{width:200px;height:auto;object-fit:contain;display:block;margin:0 auto}
+.img-full{width:100%;height:320px;object-fit:cover;display:block}
+.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.img-pair img{width:100%;height:240px;object-fit:cover;display:block}
+.img-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px}
+.img-3 img{width:100%;height:180px;object-fit:cover;display:block}
+.tz-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--sand);margin-top:20px}
+.tz-cell{background:var(--ivory);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.tz-city{font-size:10px;letter-spacing:2px;color:var(--warm);text-transform:uppercase}
+.tz-time{font-family:'Libre Baskerville',serif;font-size:20px;color:var(--terra)}
+.elder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:20px}
+.elder-card{position:relative;overflow:hidden;height:200px}
+.elder-card img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.elder-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,28,0.95) 0%,transparent 52%)}
+.elder-info{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:10px;text-align:center}
+.elder-name{font-family:'Libre Baskerville',serif;font-size:10px;color:#fff;display:block;margin-bottom:2px;line-height:1.4}
+.elder-nation{font-size:9px;color:var(--sand);letter-spacing:2px;text-transform:uppercase;display:block}
+.artist-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(232,213,176,0.5)}
+.artist-name{font-family:'Libre Baskerville',serif;font-size:14px;color:#fff}
+.artist-role{font-size:12px;color:rgba(255,255,255,0.5);font-style:italic}
+.poster-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin:16px 0}
+.poster-strip a img{width:100%;height:120px;object-fit:cover;display:block}
+.quote-sec{background:var(--charcoal);padding:48px 40px}
+.quote-inner{display:flex;gap:24px;align-items:flex-start}
+.quote-img{width:88px;height:88px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);flex-shrink:0}
+.quote-text{font-family:'Libre Baskerville',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.88);line-height:1.9;margin-bottom:16px}
+.quote-cite{font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase}
+.cta-sec{background:var(--terra);padding:52px 40px;text-align:center}
+.cta-hand img{width:180px;height:auto;object-fit:contain;margin-bottom:16px;filter:brightness(0) invert(1);display:block;margin-left:auto;margin-right:auto}
+.cta-title{font-family:'Libre Baskerville',serif;font-size:36px;color:#fff;margin-bottom:12px}
+.cta-sub{font-size:14px;color:rgba(255,255,255,0.75);margin-bottom:28px;line-height:1.9}
+.cta-btn{display:inline-block;padding:14px 44px;border:1px solid var(--sand);color:var(--sand);text-decoration:none;font-size:9px;letter-spacing:5px;text-transform:uppercase}
+.footer{background:var(--charcoal);padding:24px 40px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{display:flex;align-items:center;gap:10px;font-family:'Libre Baskerville',serif;font-size:16px;color:var(--sand);letter-spacing:4px}
+.footer-logo img{width:32px;height:32px;object-fit:contain;filter:brightness(0) invert(1)}
+.footer-meta{font-size:11px;color:#555;text-align:right;line-height:1.8}
+.footer-meta a{color:#777}
+@media(max-width:480px){.sec,.terra-sec,.quote-sec,.cta-sec{padding:36px 20px}.img-pair{grid-template-columns:1fr}.img-3{grid-template-columns:1fr 1fr}.elder-grid{grid-template-columns:1fr 1fr}.tz-grid{grid-template-columns:1fr}.poster-strip{grid-template-columns:repeat(2,1fr)}.footer{flex-direction:column;gap:12px;text-align:center;padding:20px}.footer-meta{text-align:center}.quote-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="topbar">
+  <div class="topbar-logo">
+    <img src="https://i.imgur.com/luPvq3O.png" alt="ORIGIN">
+    <span class="topbar-brand">ORIGIN</span>
+  </div>
+  <span class="topbar-date">Oct 17, 2026 · Issue 01</span>
+</div>
+<div class="hero">
+  <img src="https://i.imgur.com/5Y4L5RI.jpg" alt="ORIGIN">
+  <div class="hero-content">
+    <div class="hero-hand"><img src="https://i.imgur.com/luPvq3O.png" alt="ORIGIN"></div>
+    <span class="hero-kicker">A Synchronized Planetary Gathering</span>
+    <h1 class="hero-title">ORIGIN</h1>
+    <p class="hero-sub">Ceremony · Music · Science · Regenerative Action<br>October 17, 2026 · Planet Earth</p>
+  </div>
+</div>
+<div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+<div class="sec">
+  <div class="hand-center"><img src="https://i.imgur.com/luPvq3O.png" alt="ORIGIN"></div>
+  <span class="eyebrow">What is Origin</span>
+  <h2 class="h-xl">A New Vision<br>for Humanity</h2>
+  <p class="body-p">ORIGIN is an unprecedented worldwide event bringing together ancestral wisdom, modern innovation, and collective participation to reconnect humanity with its shared roots and shared responsibility.</p>
+  <p class="body-p">From family living rooms and backyards to public gatherings in parks and natural landscapes — everyone, everywhere, is invited.</p>
+</div>
+<img class="img-full" src="https://i.imgur.com/q70SPGL.jpg" alt="Planet Earth">
+<div class="sec">
+  <span class="eyebrow">The Synchronized Moment</span>
+  <h2 class="h-lg">Join at Your Local Time</h2>
+  <div class="tz-grid">
+    <div class="tz-cell"><span class="tz-city">San Francisco</span><span class="tz-time">12:00 PM</span></div>
+    <div class="tz-cell"><span class="tz-city">New York</span><span class="tz-time">3:00 PM</span></div>
+    <div class="tz-cell"><span class="tz-city">Mexico City</span><span class="tz-time">1:00 PM</span></div>
+    <div class="tz-cell"><span class="tz-city">London</span><span class="tz-time">8:00 PM</span></div>
+    <div class="tz-cell"><span class="tz-city">Johannesburg</span><span class="tz-time">9:00 PM</span></div>
+    <div class="tz-cell"><span class="tz-city">Sydney</span><span class="tz-time">6:00 AM ↑</span></div>
+  </div>
+</div>
+<div class="img-3">
+  <img src="https://i.imgur.com/SlOAU6Y.jpg" alt="landscape">
+  <img src="https://i.imgur.com/6h15def.jpg" alt="nature">
+  <img src="https://i.imgur.com/HU5R3ef.jpg" alt="landscape">
+</div>
+<div class="sec">
+  <span class="eyebrow">First Nations Elders</span>
+  <h2 class="h-lg">The Invocation for a New Earth</h2>
+  <p class="body-p">A prayer travelling from Aotearoa New Zealand — the first land to meet the sun — across every continent.</p>
+  <div class="elder-grid">
+    <div class="elder-card">
+  <img src="https://i.imgur.com/XezlPTv.jpg" alt="Grandma Rita Tupe" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Grandma Rita Tupe</span>
+    <span class="elder-nation">Māori · New Zealand</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/bm4PXT4.jpg" alt="Yalmay Yunupingu" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Yalmay Yunupingu</span>
+    <span class="elder-nation">Northern Australia</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/KK7KlI0.jpg" alt="Ouma Katrina Esau" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Ouma Katrina Esau</span>
+    <span class="elder-nation">South Africa</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/zCLSbt7.jpg" alt="Chief Arvol Looking Horse" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Chief Arvol Looking Horse</span>
+    <span class="elder-nation">Lakota · USA</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/BlyGayX.jpg" alt="Mamo Sey Awingūmū" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Mamo Sey Awingūmū</span>
+    <span class="elder-nation">Colombia</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/Wg7yDRD.jpg" alt="Doña Martina Mamani" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Doña Martina Mamani</span>
+    <span class="elder-nation">Peru</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/lZZrzxm.jpg" alt="Pajé Mana" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Pajé Mana</span>
+    <span class="elder-nation">Brazil</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/Lgl4HXN.jpg" alt="Adhamh Ó Broin" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Adhamh Ó Broin</span>
+    <span class="elder-nation">Scotland</span>
+  </div>
+</div>
+<div class="elder-card">
+  <img src="https://i.imgur.com/OsPNrG4.jpg" alt="Jero Nyoman Sutarmi" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+  <div class="elder-ov"></div>
+  <div class="elder-info">
+    <span class="elder-name">Jero Nyoman Sutarmi</span>
+    <span class="elder-nation">Bali</span>
+  </div>
+</div>
+  </div>
+</div>
+<div class="img-pair">
+  <img src="https://i.imgur.com/f4NDuwI.jpg" alt="nature">
+  <img src="https://i.imgur.com/VgSdNgH.jpg" alt="nature">
+</div>
+<div class="terra-sec">
+  <span class="eyebrow" style="color:var(--sand)">Artists in Conversation</span>
+  <h2 class="h-white">The Anthem for Unity</h2>
+  <p class="body-white">Guided by Jon Anderson from YES in collaboration with internationally renowned artists — fusing ancestral instruments with modern beats.</p>
+  <div style="margin-top:16px">
+    <div class="artist-row"><span class="artist-name">Jon Anderson</span><span class="artist-role">Visionary progressive rock pioneer</span></div>
+<div class="artist-row"><span class="artist-name">Maejor</span><span class="artist-role">Grammy nominated producer & artist</span></div>
+<div class="artist-row"><span class="artist-name">6LACK</span><span class="artist-role">Emotional R&B storyteller & vocalist</span></div>
+<div class="artist-row"><span class="artist-name">Eric Terena</span><span class="artist-role">Indigenous artist & environmental advocate</span></div>
+<div class="artist-row"><span class="artist-name">Deya Dova</span><span class="artist-role">Electronic producer & visionary artist</span></div>
+<div class="artist-row"><span class="artist-name">Kamal Sabri</span><span class="artist-role">Master sarangi virtuoso & composer</span></div>
+<div class="artist-row"><span class="artist-name">Malou Beauvoir</span><span class="artist-role">Haitian-American singer, songwriter & actress</span></div>
+<div class="artist-row"><span class="artist-name">Robbie Navicula</span><span class="artist-role">Environmental activist reggae rock musician</span></div>
+<div class="artist-row"><span class="artist-name">Michael Gazzo</span><span class="artist-role">Platinum record producer & multi-instrumentalist</span></div>
+  </div>
+</div>
+<div class="sec">
+  <span class="eyebrow">Poster Concepts</span>
+  <div class="poster-strip">
+    <a href="https://origin-poster.onrender.com/posters/poster1.html"><img src="https://i.imgur.com/WRX6V5b.jpg" alt="01"></a>
+    <a href="https://origin-poster.onrender.com/posters/poster2.html"><img src="https://i.imgur.com/LLX6o77.jpg" alt="02"></a>
+    <a href="https://origin-poster.onrender.com/posters/poster3.html"><img src="https://i.imgur.com/cRMcHfP.jpg" alt="03"></a>
+    <a href="https://origin-poster.onrender.com/posters/poster4.html"><img src="https://i.imgur.com/G0Swrrf.jpg" alt="04"></a>
+  </div>
+  <div style="text-align:right;margin-top:10px"><a href="https://origin-poster.onrender.com" style="font-size:10px;letter-spacing:3px;color:var(--accent);text-decoration:none;text-transform:uppercase">View All 8 →</a></div>
+</div>
+<div class="quote-sec">
+  <div class="quote-inner">
+    <img class="quote-img" src="https://i.imgur.com/4A80eW9.jpg" alt="Dr Zach Bush">
+    <div>
+      <p class="quote-text">"Origin marks a pivotal moment for humanity — a celebration of our return to our role as a keystone species. With the convergence of modern science, technology, and ancestral wisdom, we can now realign human activity with natural systems."</p>
+      <p class="quote-cite">— Dr. Zach Bush</p>
+    </div>
+  </div>
+</div>
+<div class="cta-sec">
+  <div class="cta-hand"><img src="https://i.imgur.com/luPvq3O.png" alt="ORIGIN"></div>
+  <h2 class="cta-title">Join the Movement</h2>
+  <p class="cta-sub">Register your participation. Add your location to the global map.<br>Together, let's light up the world on October 17.</p>
+  <a class="cta-btn" href="https://origin-poster.onrender.com">Register Now →</a>
+</div>
+<div class="footer">
+  <div class="footer-logo"><img src="https://i.imgur.com/luPvq3O.png" alt="">ORIGIN</div>
+  <div class="footer-meta">October 17, 2026 · Planet Earth<br>Alliance network · <a href="#">Unsubscribe</a></div>
+</div>
+</div>
+</body>
+</html>
