@@ -2,5 +2,4 @@ services:
   - type: web
     name: origin-newsletters
     runtime: static
-    staticPublishPath: ./public
-    pullRequestPreviewsEnabled: false
+    staticPublishPath: public
