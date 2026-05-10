@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ORIGIN — Newsletter Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
+:root{
+  --gold:#d4a030;
+  --gold-light:#f0c040;
+  --dark:#03100a;
+  --dark2:#0a1a0f;
+}
+
+body{
+  background:var(--dark);
+  color:#f0ebe0;
+  font-family:'Cormorant',serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Grain overlay */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:100;
+  opacity:0.4;
+}
+
+/* Top gold line */
+.top-bar{height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent)}
+
+/* Header */
+header{
+  text-align:center;
+  padding:70px 40px 50px;
+  position:relative;
+}
+
+.hand-wrap{
+  margin-bottom:28px;
+  opacity:0;
+  animation:fadeUp 1s ease 0.2s forwards;
+}
+.hand-wrap img{
+  width:130px;
+  height:auto;
+  filter:drop-shadow(0 0 30px rgba(212,160,48,0.4));
+}
+
+.eyebrow{
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:6px;
+  color:var(--gold);
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:16px;
+  opacity:0;
+  animation:fadeUp 1s ease 0.4s forwards;
+}
+
+h1{
+  font-family:'Cinzel',serif;
+  font-size:clamp(52px,12vw,96px);
+  font-weight:900;
+  letter-spacing:18px;
+  color:var(--gold-light);
+  line-height:1;
+  text-shadow:0 0 60px rgba(240,192,64,0.2);
+  opacity:0;
+  animation:fadeUp 1s ease 0.5s forwards;
+}
+
+.tagline{
+  font-style:italic;
+  font-size:17px;
+  color:rgba(240,235,224,0.6);
+  margin-top:16px;
+  letter-spacing:1px;
+  opacity:0;
+  animation:fadeUp 1s ease 0.7s forwards;
+}
+
+.divider{
+  width:60px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:40px auto;
+  opacity:0;
+  animation:fadeUp 1s ease 0.8s forwards;
+}
+
+/* Grid */
+.label{
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:5px;
+  color:var(--gold);
+  text-transform:uppercase;
+  text-align:center;
+  margin-bottom:32px;
+  opacity:0;
+  animation:fadeUp 1s ease 0.9s forwards;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2px;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 24px 80px;
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  height:340px;
+  cursor:pointer;
+  opacity:0;
+  animation:fadeUp 0.8s ease forwards;
+  text-decoration:none;
+  display:block;
+}
+.card:nth-child(1){animation-delay:1.0s}
+.card:nth-child(2){animation-delay:1.1s}
+.card:nth-child(3){animation-delay:1.2s}
+.card:nth-child(4){animation-delay:1.3s}
+.card:nth-child(5){animation-delay:1.4s}
+
+/* Preview iframe */
+.card iframe{
+  width:200%;
+  height:200%;
+  transform:scale(0.5);
+  transform-origin:top left;
+  pointer-events:none;
+  border:none;
+}
+
+/* Dark overlay */
+.card-ov{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(3,16,10,0.97) 0%, rgba(3,16,10,0.4) 50%, rgba(3,16,10,0.1) 100%);
+  transition:background 0.5s ease;
+}
+.card:hover .card-ov{
+  background:linear-gradient(to top, rgba(3,16,10,0.99) 0%, rgba(3,16,10,0.6) 50%, rgba(3,16,10,0.2) 100%);
+}
+
+/* Gold border on hover */
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border:1px solid transparent;
+  transition:border-color 0.4s ease;
+  pointer-events:none;
+  z-index:3;
+}
+.card:hover::after{
+  border-color:rgba(212,160,48,0.5);
+}
+
+.card-info{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:24px;
+  z-index:2;
+}
+
+.card-num{
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:4px;
+  color:var(--gold);
+  display:block;
+  margin-bottom:6px;
+}
+
+.card-name{
+  font-family:'Cinzel',serif;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:#f0ebe0;
+  display:block;
+  text-transform:uppercase;
+  margin-bottom:10px;
+  line-height:1.3;
+}
+
+.card-arrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:9px;
+  letter-spacing:3px;
+  color:var(--gold);
+  text-transform:uppercase;
+  opacity:0;
+  transform:translateX(-8px);
+  transition:opacity 0.3s ease, transform 0.3s ease;
+}
+.card:hover .card-arrow{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:30px 40px 50px;
+  border-top:1px solid rgba(212,160,48,0.15);
+}
+footer p{
+  font-size:10px;
+  letter-spacing:3px;
+  color:rgba(240,235,224,0.3);
+  text-transform:uppercase;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;padding:0 16px 60px}
+  .card{height:260px}
+  h1{letter-spacing:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<header>
+  <div class="hand-wrap">
+    <img src="https://i.imgur.com/luPvq3O.png" alt="ORIGIN">
+  </div>
+  <span class="eyebrow">A Synchronized Planetary Gathering</span>
+  <h1>ORIGIN</h1>
+  <p class="tagline">Ceremony · Music · Science · Regenerative Action<br>October 17, 2026 · Planet Earth</p>
+  <div class="divider"></div>
+  <p class="label">Newsletter Concepts — Choose Your Edition</p>
+</header>
+
+<div class="grid">
+
+  <a class="card" href="newsletter-1-dark-ceremony.html">
+    <iframe src="newsletter-1-dark-ceremony.html" loading="lazy" scrolling="no" title="Dark Ceremony"></iframe>
+    <div class="card-ov"></div>
+    <div class="card-info">
+      <span class="card-num">Edition 01</span>
+      <span class="card-name">Dark Ceremony</span>
+      <span class="card-arrow">View Edition →</span>
+    </div>
+  </a>
+
+  <a class="card" href="newsletter-3-modern-minimal.html">
+    <iframe src="newsletter-3-modern-minimal.html" loading="lazy" scrolling="no" title="Modern Minimal"></iframe>
+    <div class="card-ov"></div>
+    <div class="card-info">
+      <span class="card-num">Edition 03</span>
+      <span class="card-name">Modern Minimal</span>
+      <span class="card-arrow">View Edition →</span>
+    </div>
+  </a>
+
+  <a class="card" href="newsletter-4-bold-activist.html">
+    <iframe src="newsletter-4-bold-activist.html" loading="lazy" scrolling="no" title="Bold Activist"></iframe>
+    <div class="card-ov"></div>
+    <div class="card-info">
+      <span class="card-num">Edition 04</span>
+      <span class="card-name">Bold Activist</span>
+      <span class="card-arrow">View Edition →</span>
+    </div>
+  </a>
+
+  <a class="card" href="newsletter-5-site-style.html">
+    <iframe src="newsletter-5-site-style.html" loading="lazy" scrolling="no" title="Site Style"></iframe>
+    <div class="card-ov"></div>
+    <div class="card-info">
+      <span class="card-num">Edition 05</span>
+      <span class="card-name">Site Style</span>
+      <span class="card-arrow">View Edition →</span>
+    </div>
+  </a>
+
+  <a class="card" href="newsletter-6-sacred-earth.html">
+    <iframe src="newsletter-6-sacred-earth.html" loading="lazy" scrolling="no" title="Sacred Earth"></iframe>
+    <div class="card-ov"></div>
+    <div class="card-info">
+      <span class="card-num">Edition 06</span>
+      <span class="card-name">Sacred Earth</span>
+      <span class="card-arrow">View Edition →</span>
+    </div>
+  </a>
+
+</div>
+
+<footer>
+  <p>Origin · October 17, 2026 · Planet Earth</p>
+</footer>
+
+</body>
+</html>
